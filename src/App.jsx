@@ -50,7 +50,7 @@ const handleClick = (e) => {
         </p>
         <button type="submit">Submit</button>
       </form>
-      <p>{fullName}</p>
+      {fullName && <p>{fullName}</p>}
     </>
   );
 }
