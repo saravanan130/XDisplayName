@@ -19,8 +19,7 @@ const handleClick = (e) => {
 
   if (!firstName.trim() || !lastName.trim()) {
     setFullName(""); // clear previous output
-    alert("Please fill in both First Name and Last Name before submitting.");
-    return;
+    return; // stop here
   }
 
   setFullName(`Full Name: ${firstName} ${lastName}`);
