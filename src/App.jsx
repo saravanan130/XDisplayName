@@ -13,13 +13,18 @@ function App() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleClick = (e) => {
-    e.preventDefault();
-    const { firstName, lastName } = formdata;
-    if (firstName && lastName) {
-      setFullName(`Full Name: ${firstName} ${lastName}`);
-    }
-  };
+const handleClick = (e) => {
+  e.preventDefault();
+  const { firstName, lastName } = formdata;
+
+  if (!firstName.trim() || !lastName.trim()) {
+    setFullName(""); // clear previous output
+    alert("Please fill in both First Name and Last Name before submitting.");
+    return;
+  }
+
+  setFullName(`Full Name: ${firstName} ${lastName}`);
+};
 
   return (
     <>
